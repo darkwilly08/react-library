@@ -1,0 +1,20 @@
+@use '../../../common/src/styles/common';
+
+.app-bar {
+  @include common.elevation(2);
+  display: flex;
+  align-items: center;
+  height: 56px;
+  background-color: green;
+  width: 100%;
+  padding: 4px 16px;
+  &__right {
+    margin-left: auto;
+  }
+}
+
+@include common.for-size-up(sm) {
+  .app-bar {
+    height: 64px;
+  }
+}

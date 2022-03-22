@@ -1,0 +1,18 @@
+@use './breakpoints' as *;
+@use './shadows' as *;
+
+// Breakpoints
+@mixin for-size-up($name) {
+  @if not map-has-key($darkwilly08-breakpoints, $name) {
+    @warn 'Warning: `#{$name}` is not a valid breakpoint name.';
+  } @else {
+    @media screen and (min-width: map-get($darkwilly08-breakpoints, $name)) {
+      @content;
+    }
+  }
+}
+
+@mixin elevation($elevation) {
+  box-shadow: map-get($key-shadow-umbra-map, $elevation), map-get($key-shadow-penumbra-map, $elevation),
+    map-get($ambient-shadow-map, $elevation);
+}
