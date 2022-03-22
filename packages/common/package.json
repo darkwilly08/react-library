@@ -1,6 +1,6 @@
 {
-  "name": "common",
-  "version": "0.1.1",
+  "name": "@darkwilly08/common",
+  "version": "0.1.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "author": "darkwilly08",
   "license": "ISC",
-  "gitHead": "b3047979820596f8f86149b4a9ebbb2ba9fc58bb",
+  "gitHead": "bc85d717bc58ce94b63ccaf5a3d1ac9b00daf77f",
   "publishConfig": {
     "access": "public"
   }
