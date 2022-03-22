@@ -8,5 +8,8 @@
   },
   "author": "darkwilly08",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  }
 }
