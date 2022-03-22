@@ -1,6 +1,6 @@
 {
   "name": "@darkwilly08/app-bar",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@darkwilly08/icon-wrapper": "^0.1.0"
+    "@darkwilly08/icon-wrapper": "^0.1.2"
   },
   "publishConfig": {
     "access": "public"
