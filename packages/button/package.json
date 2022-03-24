@@ -1,7 +1,7 @@
 {
   "name": "@darkwilly08/button",
   "description": "",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,6 +13,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@darkwilly08/icon-wrapper": "^0.1.3"
+    "@darkwilly08/icon-wrapper": "^0.1.4"
   }
 }
