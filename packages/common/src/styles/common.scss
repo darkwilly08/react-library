@@ -1,8 +1,20 @@
 @forward './breakpoints';
 @forward './mixins';
+@forward './colors';
 
 @forward './icons';
+@forward './fonts';
+
+@use './mixins';
 
 * {
   box-sizing: border-box;
+}
+
+* {
+  font-family: 'Roboto';
+}
+
+.shadow {
+  @include mixins.shadow;
 }

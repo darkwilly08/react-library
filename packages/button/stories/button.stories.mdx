@@ -1,0 +1,106 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+
+import { Button } from '../src/Button';
+
+export const Template = (args) => {
+  return <Button {...args} />;
+};
+
+export const argTypes = {
+  color: {
+    type: { name: 'string', required: false },
+    description: 'you can override --primary-color to change default value',
+    table: {
+      type: { summary: 'color' },
+      defaultValue: { summary: 'primary' },
+    },
+  },
+  textColor: {
+    type: { name: 'string', required: false },
+    table: {
+      type: { summary: 'color' },
+    },
+  },
+  text: {
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: 'null' },
+    },
+  },
+  flat: {
+    description: 'Flat property set background-color transparent',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: 'false' },
+    },
+  },
+  leftIcon: {
+    name: 'Left Google Icon',
+    type: { name: 'string', required: false },
+    description: 'Write any Material Icon such as "home" or "face"',
+    table: {
+      type: { summary: 'google-icon', detail: 'fore more information visit: https://fonts.google.com/icons' },
+      defaultValue: { summary: 'null' },
+    },
+  },
+  rightIcon: {
+    name: 'Right Google Icon',
+    type: { name: 'string', required: false },
+    description: 'Write any Material Icon such as "home" or "face"',
+    table: {
+      type: { summary: 'google-icon', detail: 'fore more information visit: https://fonts.google.com/icons' },
+      defaultValue: { summary: 'null' },
+    },
+  },
+  onClick: {
+    table: {
+      type: { summary: 'function' },
+    },
+  },
+};
+
+<Meta title="Components/Button" />
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      text: 'standard',
+      flat: false,
+      onClick: action('button clicked'),
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind()}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Flat"
+    args={{
+      text: 'flat',
+      flat: true,
+      onClick: action('button clicked'),
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind()}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="With left icon"
+    args={{
+      text: 'with icon',
+      flat: false,
+      leftIcon: 'face',
+      onClick: action('button clicked'),
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind()}
+  </Story>
+</Canvas>

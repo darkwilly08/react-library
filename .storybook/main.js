@@ -27,6 +27,7 @@ module.exports = {
         fullySpecified: false,
       },
     });
+
     return config;
   },
 };
