@@ -1,5 +1,5 @@
 {
-  "name": "@darkwilly08/app-bar",
+  "name": "@darkwilly08/drawer",
   "version": "0.1.4",
   "description": "",
   "main": "index.js",
@@ -11,9 +11,5 @@
   "type": "module",
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "bc85d717bc58ce94b63ccaf5a3d1ac9b00daf77f",
-  "dependencies": {
-    "@darkwilly08/button": "^0.1.4"
   }
 }

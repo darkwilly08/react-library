@@ -35,7 +35,7 @@ export const argTypes = {
       defaultValue: { summary: 'false' },
     },
   },
-  leftIcon: {
+  icon: {
     name: 'Left Google Icon',
     type: { name: 'string', required: false },
     description: 'Write any Material Icon such as "home" or "face"',
@@ -96,7 +96,22 @@ export const argTypes = {
     args={{
       text: 'with icon',
       flat: false,
-      leftIcon: 'face',
+      icon: 'face',
+      onClick: action('button clicked'),
+    }}
+    argTypes={argTypes}
+  >
+    {Template.bind()}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Round"
+    args={{
+      flat: false,
+      icon: 'face',
+      round: true,
       onClick: action('button clicked'),
     }}
     argTypes={argTypes}

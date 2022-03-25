@@ -1,13 +1,12 @@
-// import { IconWrapper } from '../../icon-wrapper/index.js';
-import { IconWrapper } from '@darkwilly08/icon-wrapper';
+import { Button } from '@darkwilly08/button';
 import './styles/AppBar.scss';
 
 const AppBar = () => {
   const rootClass = 'app-bar';
   return (
     <div className={rootClass}>
-      <IconWrapper name="menu" />
-      <div>title</div>
+      <Button icon="menu" round flat />
+      <div className="app-bar__title">title</div>
       <div className={`${rootClass}__right`}>test</div>
     </div>
   );
