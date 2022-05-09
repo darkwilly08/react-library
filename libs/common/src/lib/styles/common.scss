@@ -1,0 +1,31 @@
+// Forwards
+@forward "./breakpoints";
+@forward "./mixins";
+@forward "./colors";
+@forward "./typography";
+@forward "./spaces";
+@forward "./icons";
+@forward "./fonts";
+@forward "./exports";
+
+// Uses
+@use "./mixins";
+
+// Simple commons styles
+* {
+  box-sizing: border-box;
+  /* stylelint-disable-next-line font-family-name-quotes */
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+.shadow {
+  @include mixins.shadow;
+}

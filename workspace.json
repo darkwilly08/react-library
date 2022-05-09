@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "button": "libs/button",
+    "common": "libs/common",
+    "icon-wrapper": "libs/icon-wrapper",
+    "shared-stories": "libs/shared/stories"
+  }
+}
