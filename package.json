@@ -7,7 +7,9 @@
     "build": "nx build",
     "test": "nx test",
     "create-component": "nx g @nrwl/react:lib ${npm_config_name} --importPath=@darkwilly08-nx/${npm_config_name}  --publishable",
-    "storybook:start": "nx run shared-stories:storybook"
+    "storybook:start": "nx run shared-stories:storybook",
+    "lint-scss": "stylelint **/*.scss",
+    "lint-scss:fix": "npm run lint-scss -- --fix"
   },
   "private": true,
   "dependencies": {
@@ -58,6 +60,10 @@
     "prettier": "^2.5.1",
     "react-ripples": "^2.2.1",
     "react-test-renderer": "18.1.0",
+    "stylelint": "^14.8.2",
+    "stylelint-config-css-modules": "^4.1.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-scss": "^4.2.0",
     "ts-jest": "27.1.4",
     "ts-node": "9.1.1",
     "typescript": "~4.6.2",

@@ -1,4 +1,4 @@
-@use "../../../common/src/lib/styles/common";
+@use '../../../common/src/lib/styles/common';
 
 .app-bar {
   @include common.elevation(2);
