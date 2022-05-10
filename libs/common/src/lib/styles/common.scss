@@ -7,6 +7,7 @@
 @forward "./icons";
 @forward "./fonts";
 @forward "./exports";
+@forward "./misc";
 
 // Uses
 @use "./mixins";
@@ -20,10 +21,6 @@
 
 body {
   font-size: 14px;
-}
-
-.hidden {
-  display: none;
 }
 
 .shadow {

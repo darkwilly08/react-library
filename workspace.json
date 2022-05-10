@@ -1,9 +1,12 @@
 {
   "version": 2,
   "projects": {
+    "app-bar": "libs/app-bar",
     "button": "libs/button",
     "common": "libs/common",
+    "drawer": "libs/drawer",
     "icon-wrapper": "libs/icon-wrapper",
+    "layouts": "libs/layouts",
     "shared-stories": "libs/shared/stories"
   }
 }

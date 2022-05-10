@@ -1,0 +1,37 @@
+@use "../../../common/src/lib/styles/common";
+
+.drawer {
+  height: 100vh;
+  min-width: 250px;
+  z-index: 1200;
+  background-color: red;
+  transition: min-width 0.2s ease;
+  position: fixed;
+  overflow-x: hidden;
+
+  &--hidden {
+    width: 0;
+    min-width: 0;
+  }
+
+  &__background {
+    position: fixed;
+    border-radius: 0 !important;
+    max-width: 100vw;
+    max-height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0 0 0 / 50%);
+    z-index: 1199 !important;
+    cursor: pointer;
+  }
+}
+
+@include common.for-size-up(lg) {
+  .drawer {
+    position: relative;
+    overflow-x: auto;
+  }
+}

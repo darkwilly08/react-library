@@ -1,0 +1,29 @@
+@use "../../../common/src/lib/styles/common";
+
+.app-bar {
+  @include common.elevation(2);
+
+  display: flex;
+  align-items: center;
+  height: 56px;
+  background-color: var(--primary-color);
+  width: 100%;
+  padding: common.$p-xs common.$p-md;
+
+  &__right {
+    margin-left: auto;
+  }
+
+  &__title {
+    margin-left: common.$m-sm;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+@include common.for-size-up(sm) {
+  .app-bar {
+    height: 64px;
+  }
+}

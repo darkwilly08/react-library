@@ -1,0 +1,11 @@
+.default-layout {
+    display: flex;
+  
+    &__page-container {
+      display: flex;
+      flex-basis: 100%;
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+  
