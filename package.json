@@ -6,7 +6,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "create-component": "nx g @nrwl/react:lib ${npm_config_name} --importPath=@darkwilly08-nx/${npm_config_name}  --publishable",
+    "create-component": "nx g @nrwl/react:lib ${npm_config_name} --importPath=@darkwilly08/${npm_config_name}  --publishable",
     "storybook:start": "nx run shared-stories:storybook",
     "lint-scss": "stylelint **/*.scss",
     "lint-scss:fix": "npm run lint-scss -- --fix"

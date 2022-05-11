@@ -1,6 +1,6 @@
 import * as PropTypes from 'prop-types';
 
-import { Button } from '@darkwilly08-nx/button';
+import { Button } from '@darkwilly08/button';
 
 import styles from './app-bar.module.scss';
 

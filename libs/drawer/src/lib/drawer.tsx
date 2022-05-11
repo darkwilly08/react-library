@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as PropTypes from 'prop-types';
 import { forwardRef, Ref, useEffect, useImperativeHandle, useState } from 'react';
 
-import { useIsFirstRender, useScreenSize } from '@darkwilly08-nx/common';
+import { useIsFirstRender, useScreenSize } from '@darkwilly08/common';
 
 import styles from './drawer.module.scss';
 import { RefDrawer } from './refDrawer';

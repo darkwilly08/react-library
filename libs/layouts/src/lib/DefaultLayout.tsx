@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import * as PropTypes from 'prop-types';
 import { useRef } from 'react';
 
-import { AppBar } from '@darkwilly08-nx/app-bar';
-import { Drawer, RefDrawer } from '@darkwilly08-nx/drawer';
+import { AppBar } from '@darkwilly08/app-bar';
+import { Drawer, RefDrawer } from '@darkwilly08/drawer';
 
 import styles from './styles/DefaultLayout.module.scss';
 

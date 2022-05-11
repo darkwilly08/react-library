@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as PropTypes from 'prop-types';
 import Ripples from 'react-ripples';
 
-import { IconWrapper } from '@darkwilly08-nx/icon-wrapper';
+import { IconWrapper } from '@darkwilly08/icon-wrapper';
 
 import styles from './button.module.scss';
 import { CSSProperties } from 'react';
