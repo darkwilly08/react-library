@@ -1,6 +1,6 @@
 {
   "name": "darkwilly08",
-  "version": "0.0.2",
+  "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
@@ -10,7 +10,11 @@
     "storybook:start": "nx run shared-stories:storybook",
     "lint-scss": "stylelint **/*.scss",
     "lint-scss:fix": "npm run lint-scss -- --fix",
-    "publishTODO": "npm publish dist/libs/app-bar/ -access public"
+    "publishTODO": "npm publish dist/libs/app-bar/ -access public",
+    "prepare": "husky install",
+    "make-version:patch": "nx run common:version --skipProjectChangelog --syncVersions --releaseAs=patch --commitMessageFormat='chore(patch): ${version}'",
+    "make-version:minor": "nx run common:version --syncVersions --releaseAs=minor --commitMessageFormat=RELEASE(minor): ${version}",
+    "make-version:major": "nx run common:version --syncVersions --releaseAs=major --commitMessageFormat=RELEASE(major): ${version}"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +27,9 @@
   "devDependencies": {
     "@babel/core": "7.12.13",
     "@babel/preset-typescript": "7.12.13",
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
+    "@jscutlery/semver": "^2.23.4",
     "@nrwl/cli": "14.1.4",
     "@nrwl/cypress": "14.1.4",
     "@nrwl/eslint-plugin-nx": "14.1.4",
@@ -56,6 +63,7 @@
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.5.0",
+    "husky": "^7.0.4",
     "jest": "27.5.1",
     "nx": "14.1.4",
     "prettier": "^2.5.1",
