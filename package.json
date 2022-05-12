@@ -12,7 +12,7 @@
     "lint-scss:fix": "npm run lint-scss -- --fix",
     "publishTODO": "npm publish dist/libs/app-bar/ -access public",
     "prepare": "husky install",
-    "make-version:patch": "nx run common:version --skipProjectChangelog --syncVersions --releaseAs=patch --commitMessageFormat='chore(patch): ${version}'",
+    "make-version:patch": "nx run common:version --skipProjectChangelog --syncVersions --releaseAs=patch",
     "make-version:minor": "nx run common:version --syncVersions --releaseAs=minor --commitMessageFormat=RELEASE(minor): ${version}",
     "make-version:major": "nx run common:version --syncVersions --releaseAs=major --commitMessageFormat=RELEASE(major): ${version}"
   },
