@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useIsSsr } from './useIsSsr';
 
 const getSize = () => {
   const { innerWidth } = window;
@@ -11,8 +12,19 @@ const getSize = () => {
   };
 };
 
+const getDefault = () => {
+  return {
+    sm: false,
+    md: true,
+    lg: false,
+    xl: false,
+    xxl: false,
+  };
+};
+
 const useScreenSize = () => {
-  const [size, setSize] = useState(getSize());
+  const isSsr = useIsSsr();
+  const [size, setSize] = useState(isSsr ? getDefault() : getSize());
   useEffect(() => {
     function handleResize() {
       setSize(getSize());

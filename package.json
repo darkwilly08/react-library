@@ -1,6 +1,6 @@
 {
   "name": "darkwilly08",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
@@ -9,7 +9,8 @@
     "create-component": "nx g @nrwl/react:lib ${npm_config_name} --importPath=@darkwilly08/${npm_config_name}  --publishable",
     "storybook:start": "nx run shared-stories:storybook",
     "lint-scss": "stylelint **/*.scss",
-    "lint-scss:fix": "npm run lint-scss -- --fix"
+    "lint-scss:fix": "npm run lint-scss -- --fix",
+    "publishTODO": "npm publish dist/libs/app-bar/ -access public"
   },
   "private": true,
   "dependencies": {
