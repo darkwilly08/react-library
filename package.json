@@ -1,6 +1,6 @@
 {
   "name": "darkwilly08",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
@@ -12,7 +12,7 @@
     "lint-scss:fix": "npm run lint-scss -- --fix",
     "publishTODO": "npm publish dist/libs/app-bar/ -access public",
     "prepare": "husky install",
-    "make-version:patch": "nx run workspace:version --skipProjectChangelog --syncVersions --releaseAs=patch",
+    "make-version:patch": "nx run workspace:version --skipProjectChangelog --syncVersions",
     "make-version:minor": "nx run common:version --syncVersions --releaseAs=minor --commitMessageFormat=RELEASE(minor): ${version}",
     "make-version:major": "nx run common:version --syncVersions --releaseAs=major --commitMessageFormat=RELEASE(major): ${version}"
   },
