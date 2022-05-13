@@ -7,6 +7,17 @@
     "drawer": "libs/drawer",
     "icon-wrapper": "libs/icon-wrapper",
     "layouts": "libs/layouts",
-    "shared-stories": "libs/shared/stories"
+    "shared-stories": "libs/shared/stories",
+    "workspace": {
+      "root": ".",
+      "targets": {
+        "version": {
+          "executor": "@jscutlery/semver:version",
+          "options": {
+            "syncVersions": true
+          }
+        }
+      }
+    }
   }
 }
