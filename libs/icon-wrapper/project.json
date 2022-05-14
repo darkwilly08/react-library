@@ -35,6 +35,7 @@
       "outputs": ["coverage/libs/icon-wrapper"],
       "options": {
         "jestConfig": "libs/icon-wrapper/jest.config.ts",
+        "setupFilesAfterEnv": ["../../jest-setup.ts"],
         "passWithNoTests": true
       }
     },

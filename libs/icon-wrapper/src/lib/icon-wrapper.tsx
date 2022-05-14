@@ -8,7 +8,7 @@ const propTypes = {
   className: PropTypes.string,
 };
 
-type IconWrapperProps = PropTypes.InferProps<typeof propTypes>;
+export type IconWrapperProps = PropTypes.InferProps<typeof propTypes>;
 
 const IconWrapper = ({ name, className }: IconWrapperProps) => {
   return <span className={clsx('material-icons', className)}>{name}</span>;

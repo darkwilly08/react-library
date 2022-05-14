@@ -1,10 +1,13 @@
 import { render } from '@testing-library/react';
 
-import IconWrapper from './icon-wrapper';
+import { IconWrapper, IconWrapperProps } from './icon-wrapper';
 
 describe('IconWrapper', () => {
+  const mockProps: IconWrapperProps = {
+    name: 'home',
+  };
   it('should render successfully', () => {
-    const { baseElement } = render(<IconWrapper />);
-    expect(baseElement).toBeTruthy();
+    const { container } = render(<IconWrapper name={mockProps.name} />);
+    expect(container).not.toBeEmptyDOMElement();
   });
 });
