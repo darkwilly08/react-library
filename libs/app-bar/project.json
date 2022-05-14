@@ -5,17 +5,13 @@
   "targets": {
     "build": {
       "executor": "@nrwl/web:rollup",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/libs/app-bar",
         "tsConfig": "libs/app-bar/tsconfig.lib.json",
         "project": "libs/app-bar/package.json",
         "entryFile": "libs/app-bar/src/index.ts",
-        "external": [
-          "react/jsx-runtime"
-        ],
+        "external": ["react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "babel",
         "assets": [
@@ -29,20 +25,14 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "libs/app-bar/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["libs/app-bar/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/libs/app-bar"
-      ],
+      "outputs": ["coverage/libs/app-bar"],
       "options": {
         "jestConfig": "libs/app-bar/jest.config.ts",
         "passWithNoTests": true
@@ -52,6 +42,13 @@
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional"
+      }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm publish -access public",
+        "cwd": "dist/libs/app-bar"
       }
     }
   }
