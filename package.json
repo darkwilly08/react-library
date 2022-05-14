@@ -6,7 +6,7 @@
     "start": "nx serve",
     "build": "nx build",
     "build:all": "nx run-many --target=build --all --exclude=shared-stories,workspace --parallel=4",
-    "publish": "nx run-many --target=publish --all --exclude=shared-stories,workspace --parallel=4",
+    "publish": "npm run build:all && nx run-many --target=publish --all --exclude=shared-stories,workspace --parallel=4",
     "test": "nx test",
     "create-component": "nx g @nrwl/react:lib ${npm_config_name} --importPath=@darkwilly08/${npm_config_name}  --publishable",
     "storybook:start": "nx run shared-stories:storybook",
