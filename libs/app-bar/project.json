@@ -35,6 +35,7 @@
       "outputs": ["coverage/libs/app-bar"],
       "options": {
         "jestConfig": "libs/app-bar/jest.config.ts",
+        "setupFilesAfterEnv": ["../../jest-setup.ts"],
         "passWithNoTests": true
       }
     },

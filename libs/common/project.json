@@ -35,6 +35,7 @@
       "outputs": ["coverage/libs/common"],
       "options": {
         "jestConfig": "libs/common/jest.config.ts",
+        "setupFilesAfterEnv": ["../../jest-setup.ts"],
         "passWithNoTests": true
       }
     },

@@ -35,6 +35,7 @@
       "outputs": ["coverage/libs/drawer"],
       "options": {
         "jestConfig": "libs/drawer/jest.config.ts",
+        "setupFilesAfterEnv": ["../../jest-setup.ts"],
         "passWithNoTests": true
       }
     },

@@ -35,6 +35,7 @@
       "outputs": ["coverage/libs/button"],
       "options": {
         "jestConfig": "libs/button/jest.config.ts",
+        "setupFilesAfterEnv": ["../../jest-setup.ts"],
         "passWithNoTests": true
       }
     },

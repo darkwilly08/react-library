@@ -39,7 +39,11 @@
       "@darkwilly08/shared/stories": [
         "libs/shared/stories/src/index.ts"
       ]
-    }
+    },
+    "typeRoots": [
+      "node_modules/@types",
+      "typings"
+    ]
   },
   "exclude": [
     "node_modules",

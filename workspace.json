@@ -16,6 +16,14 @@
           "options": {
             "syncVersions": true
           }
+        },
+        "publish": {
+          "executor": "nx:run-commands",
+          "outputs": [],
+          "options": {
+            "commands": ["echo 'TODO: add publish command for each project'", "npm publish -access public"]
+          },
+          "cwd": "dist/libs/button"
         }
       }
     }

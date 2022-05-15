@@ -18,7 +18,7 @@ const propTypes = {
   round: PropTypes.bool,
 };
 
-type ButtonProps = PropTypes.InferProps<typeof propTypes>;
+export type ButtonProps = PropTypes.InferProps<typeof propTypes>;
 
 export function Button({ text, icon, rightIcon, flat, color, textColor, onClick, round }: ButtonProps) {
   const rootClass = 'ripple-button';
