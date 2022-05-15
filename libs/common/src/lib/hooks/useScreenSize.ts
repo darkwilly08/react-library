@@ -14,7 +14,7 @@ const getSize = () => {
 
 const getDefault = () => {
   return {
-    sm: false,
+    sm: true,
     md: true,
     lg: false,
     xl: false,
