@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconWrapper should render successfully 1`] = `
+<div>
+  <span
+    class="material-icons"
+  >
+    home
+  </span>
+</div>
+`;

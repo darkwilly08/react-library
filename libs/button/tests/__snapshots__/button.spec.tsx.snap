@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should ignore text and right icon on round button 1`] = `
+<div>
+  <div
+    class="react-ripples ripple-button ripple-button--round"
+    style="position: relative; display: inline-flex; overflow: hidden;"
+  >
+    <button
+      class="ripple-button__button ripple-button__button--round"
+    />
+    <s
+      style="position: absolute; border-radius: 50%; opacity: 0; width: 35px; height: 35px; transform: translate(-50%, -50%); pointer-events: none;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Button should render colored button 1`] = `
+<div>
+  <div
+    class="react-ripples ripple-button"
+    style="position: relative; display: inline-flex; overflow: hidden;"
+  >
+    <button
+      class="ripple-button__button"
+      style="color: red; background-color: green;"
+    >
+      <div>
+        red text over green background
+      </div>
+    </button>
+    <s
+      style="position: absolute; border-radius: 50%; opacity: 0; width: 35px; height: 35px; transform: translate(-50%, -50%); pointer-events: none;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Button should render flat button 1`] = `
+<div>
+  <div
+    class="react-ripples"
+    style="position: relative; display: inline-flex; overflow: hidden;"
+  >
+    <button
+      class="ripple-button__button ripple-button__button--flat"
+    >
+      <div />
+    </button>
+    <s
+      style="position: absolute; border-radius: 50%; opacity: 0; width: 35px; height: 35px; transform: translate(-50%, -50%); pointer-events: none;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Button should render icon on round button 1`] = `
+<div>
+  <div
+    class="react-ripples ripple-button ripple-button--round"
+    style="position: relative; display: inline-flex; overflow: hidden;"
+  >
+    <button
+      class="ripple-button__button ripple-button__button--round"
+    >
+      <span
+        class="material-icons ripple-button__button__left-icon ripple-button__button__left-icon--round"
+      >
+        home
+      </span>
+    </button>
+    <s
+      style="position: absolute; border-radius: 50%; opacity: 0; width: 35px; height: 35px; transform: translate(-50%, -50%); pointer-events: none;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Button should render left icon button 1`] = `
+<div>
+  <div
+    class="react-ripples ripple-button"
+    style="position: relative; display: inline-flex; overflow: hidden;"
+  >
+    <button
+      class="ripple-button__button"
+    >
+      <span
+        class="material-icons ripple-button__button__left-icon"
+      >
+        home
+      </span>
+      <div />
+    </button>
+    <s
+      style="position: absolute; border-radius: 50%; opacity: 0; width: 35px; height: 35px; transform: translate(-50%, -50%); pointer-events: none;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Button should render right icon 1`] = `
+<div>
+  <div
+    class="react-ripples ripple-button"
+    style="position: relative; display: inline-flex; overflow: hidden;"
+  >
+    <button
+      class="ripple-button__button"
+    >
+      <div />
+      <span
+        class="material-icons ripple-button__button__right-icon"
+      >
+        home
+      </span>
+    </button>
+    <s
+      style="position: absolute; border-radius: 50%; opacity: 0; width: 35px; height: 35px; transform: translate(-50%, -50%); pointer-events: none;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Button should render round button 1`] = `
+<div>
+  <div
+    class="react-ripples ripple-button ripple-button--round"
+    style="position: relative; display: inline-flex; overflow: hidden;"
+  >
+    <button
+      class="ripple-button__button ripple-button__button--round"
+    />
+    <s
+      style="position: absolute; border-radius: 50%; opacity: 0; width: 35px; height: 35px; transform: translate(-50%, -50%); pointer-events: none;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Button should render successfully 1`] = `
+<div>
+  <div
+    class="react-ripples ripple-button"
+    style="position: relative; display: inline-flex; overflow: hidden;"
+  >
+    <button
+      class="ripple-button__button"
+    >
+      <div />
+    </button>
+    <s
+      style="position: absolute; border-radius: 50%; opacity: 0; width: 35px; height: 35px; transform: translate(-50%, -50%); pointer-events: none;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Button should render text button 1`] = `
+<div>
+  <div
+    class="react-ripples ripple-button"
+    style="position: relative; display: inline-flex; overflow: hidden;"
+  >
+    <button
+      class="ripple-button__button"
+    >
+      <div>
+        I am the text
+      </div>
+    </button>
+    <s
+      style="position: absolute; border-radius: 50%; opacity: 0; width: 35px; height: 35px; transform: translate(-50%, -50%); pointer-events: none;"
+    />
+  </div>
+</div>
+`;
