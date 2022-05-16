@@ -1,7 +1,4 @@
-const { getJestProjects } = require('@nrwl/jest');
-
 module.exports = {
-  // projects: getJestProjects(),
   moduleNameMapper: {
     '.+\\.(css|scss)$': 'identity-obj-proxy',
     '@darkwilly08/app-bar': '<rootDir>/libs/app-bar/src/index.ts',
