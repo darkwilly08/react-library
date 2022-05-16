@@ -16,7 +16,7 @@ const Drawer = forwardRef(({ className }: DrawerProps, ref: Ref<RefDrawer>) => {
   const rootClass = 'drawer';
   const screenSize = useScreenSize();
   const isFirstRender = useIsFirstRender();
-  const [isHidden, setIsHidden] = useState(screenSize.lg);
+  const [isHidden, setIsHidden] = useState(true);
   const [hasOverlay, setHasOverlay] = useState(!screenSize.lg);
 
   const toggleVisibility = () => {
@@ -27,7 +27,6 @@ const Drawer = forwardRef(({ className }: DrawerProps, ref: Ref<RefDrawer>) => {
     if (isFirstRender) return;
 
     if (screenSize.lg) {
-      setIsHidden(false);
       setHasOverlay(false);
     } else {
       setIsHidden(true);

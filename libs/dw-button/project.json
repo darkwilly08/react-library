@@ -1,5 +1,5 @@
 {
-  "sourceRoot": "libs/button/src",
+  "sourceRoot": "libs/dw-button/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -7,16 +7,16 @@
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/button",
-        "tsConfig": "libs/button/tsconfig.lib.json",
-        "project": "libs/button/package.json",
-        "entryFile": "libs/button/src/index.ts",
+        "outputPath": "dist/libs/dw-button",
+        "tsConfig": "libs/dw-button/tsconfig.lib.json",
+        "project": "libs/dw-button/package.json",
+        "entryFile": "libs/dw-button/src/index.ts",
         "external": ["react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "babel",
         "assets": [
           {
-            "glob": "libs/button/README.md",
+            "glob": "libs/dw-button/README.md",
             "input": ".",
             "output": "."
           }
@@ -27,14 +27,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/button/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["libs/dw-button/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/button"],
+      "outputs": ["coverage/libs/dw-button"],
       "options": {
-        "jestConfig": "libs/button/jest.config.ts",
+        "jestConfig": "libs/dw-button/jest.config.ts",
         "setupFilesAfterEnv": ["../../jest-setup.ts"],
         "passWithNoTests": true
       }
@@ -45,7 +45,7 @@
         "uiFramework": "@storybook/react",
         "port": 4400,
         "config": {
-          "configFolder": "libs/button/.storybook"
+          "configFolder": "libs/dw-button/.storybook"
         }
       },
       "configurations": {
@@ -59,9 +59,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/button",
+        "outputPath": "dist/storybook/dw-button",
         "config": {
-          "configFolder": "libs/button/.storybook"
+          "configFolder": "libs/dw-button/.storybook"
         }
       },
       "configurations": {
@@ -80,7 +80,7 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "npm publish -access public",
-        "cwd": "dist/libs/button"
+        "cwd": "dist/libs/dw-button"
       }
     }
   }

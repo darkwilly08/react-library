@@ -1,6 +1,6 @@
 import * as PropTypes from 'prop-types';
 
-import { Button } from '@darkwilly08/button';
+import { DwButton } from '@darkwilly08/dw-button';
 
 import styles from './app-bar.module.scss';
 
@@ -14,7 +14,7 @@ const AppBar = ({ onClick }: AppBarProps) => {
   const rootClass = 'app-bar';
   return (
     <div className={styles[rootClass]}>
-      <Button icon="menu" round flat onClick={onClick} />
+      <DwButton icon="menu" round flat onClick={onClick} />
       <div className={`${styles['app-bar__title']} text-h6`}>title</div>
       <div className={`${styles[`${rootClass}__right`]} text-subtitle`}>test</div>
     </div>

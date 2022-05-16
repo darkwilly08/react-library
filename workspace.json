@@ -2,7 +2,7 @@
   "version": 2,
   "projects": {
     "app-bar": "libs/app-bar",
-    "button": "libs/button",
+    "dw-button": "libs/dw-button",
     "common": "libs/common",
     "drawer": "libs/drawer",
     "icon-wrapper": "libs/icon-wrapper",
@@ -23,7 +23,7 @@
           "options": {
             "commands": ["echo 'TODO: add publish command for each project'", "npm publish -access public"]
           },
-          "cwd": "dist/libs/button"
+          "cwd": "dist/libs/dw-button"
         }
       }
     }

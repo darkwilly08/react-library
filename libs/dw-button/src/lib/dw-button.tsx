@@ -4,7 +4,7 @@ import Ripples from 'react-ripples';
 
 import { IconWrapper } from '@darkwilly08/icon-wrapper';
 
-import styles from './button.module.scss';
+import styles from './dw-button.module.scss';
 import { CSSProperties } from 'react';
 
 const propTypes = {
@@ -20,7 +20,7 @@ const propTypes = {
 
 export type ButtonProps = PropTypes.InferProps<typeof propTypes>;
 
-export function Button({ text, icon, rightIcon, flat, color, textColor, onClick, round }: ButtonProps) {
+export const DwButton = ({ text, icon, rightIcon, flat, color, textColor, onClick, round }: ButtonProps) => {
   const rootClass = 'ripple-button';
   const style: CSSProperties = {
     color: textColor ?? undefined,
@@ -50,11 +50,11 @@ export function Button({ text, icon, rightIcon, flat, color, textColor, onClick,
       </button>
     </Ripples>
   );
-}
+};
 
-Button.propTypes = propTypes;
+DwButton.propTypes = propTypes;
 
-Button.defaultProps = {
+DwButton.defaultProps = {
   text: '',
   flat: false,
   round: false,

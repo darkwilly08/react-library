@@ -10,43 +10,20 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@darkwilly08/app-bar": [
-        "libs/app-bar/src/index.ts"
-      ],
-      "@darkwilly08/button": [
-        "libs/button/src/index.ts"
-      ],
-      "@darkwilly08/common": [
-        "libs/common/src/index.ts"
-      ],
-      "@darkwilly08/drawer": [
-        "libs/drawer/src/index.ts"
-      ],
-      "@darkwilly08/icon-wrapper": [
-        "libs/icon-wrapper/src/index.ts"
-      ],
-      "@darkwilly08/layouts": [
-        "libs/layouts/src/index.ts"
-      ],
-      "@darkwilly08/shared/stories": [
-        "libs/shared/stories/src/index.ts"
-      ]
+      "@darkwilly08/app-bar": ["libs/app-bar/src/index.ts"],
+      "@darkwilly08/dw-button": ["libs/dw-button/src/index.ts"],
+      "@darkwilly08/common": ["libs/common/src/index.ts"],
+      "@darkwilly08/drawer": ["libs/drawer/src/index.ts"],
+      "@darkwilly08/icon-wrapper": ["libs/icon-wrapper/src/index.ts"],
+      "@darkwilly08/layouts": ["libs/layouts/src/index.ts"],
+      "@darkwilly08/shared/stories": ["libs/shared/stories/src/index.ts"]
     },
-    "typeRoots": [
-      "node_modules/@types",
-      "typings"
-    ]
+    "typeRoots": ["node_modules/@types", "typings"]
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
