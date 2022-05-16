@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.3](https://github.com-darkwilly08/darkwilly08/react-library/compare/v0.2.2...v0.2.3) (2022-05-16)
+
+
+### Bug Fixes
+
+* **scripts:** jest works globally ignoring nx configuration ([84c212f](https://github.com-darkwilly08/darkwilly08/react-library/commit/84c212f8a8390c391cdee614cb029ec3e2ca7e9f))
+
+
+
 ## [0.2.2](/compare/v0.2.1...v0.2.2) (2022-05-14)
 
 
