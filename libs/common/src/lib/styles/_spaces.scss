@@ -11,3 +11,9 @@ $m-sm: 8px;
 $m-md: 16px;
 $m-lg: 24px;
 $m-xl: 32px;
+
+:global {
+  .p-md {
+    padding: $p-md;
+  }
+}

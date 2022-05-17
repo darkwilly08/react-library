@@ -6,13 +6,19 @@ import { useIsFirstRender, useScreenSize } from '@darkwilly08/common';
 
 import styles from './drawer.module.scss';
 import { RefDrawer } from './refDrawer';
+import { Menu } from './menu';
+import { Header } from './header';
 const propTypes = {
+  title: PropTypes.string,
+  logo: PropTypes.string,
+  items: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   className: PropTypes.string,
+  children: PropTypes.node,
 };
 
 type DrawerProps = PropTypes.InferProps<typeof propTypes>;
 
-const Drawer = forwardRef(({ className }: DrawerProps, ref: Ref<RefDrawer>) => {
+const Drawer = forwardRef(({ className, title, logo, items }: DrawerProps, ref: Ref<RefDrawer>) => {
   const rootClass = 'drawer';
   const screenSize = useScreenSize();
   const isFirstRender = useIsFirstRender();
@@ -43,9 +49,14 @@ const Drawer = forwardRef(({ className }: DrawerProps, ref: Ref<RefDrawer>) => {
       <div
         className={clsx(styles['drawer__background'], (!hasOverlay || isHidden) && 'hidden')}
         onClick={toggleVisibility}
-      ></div>
-      {/* // TODO add content as children object */}
-      <div className={clsx(styles[rootClass], className, isHidden && styles[`${rootClass}--hidden`])}>content</div>
+      />
+      <div className={clsx(styles[rootClass], className, isHidden && styles[`${rootClass}--hidden`])}>
+        <div className="p-md">
+          <Header logo={logo} title={title} />
+          <hr />
+          <Menu items={items} />
+        </div>
+      </div>
     </>
   );
 });

@@ -4,7 +4,8 @@
   height: 100vh;
   min-width: 250px;
   z-index: 1200;
-  background-color: red;
+  background: rgb(16, 42, 67);
+  background: linear-gradient(132deg, rgba(16, 42, 67, 1) 0%, rgba(144, 164, 174, 1) 100%);
   transition: min-width 0.2s ease;
   position: fixed;
   overflow-x: hidden;
@@ -26,6 +27,14 @@
     background-color: rgb(0 0 0 / 50%);
     z-index: 1199 !important;
     cursor: pointer;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    text-overflow: ellipsis;
   }
 }
 

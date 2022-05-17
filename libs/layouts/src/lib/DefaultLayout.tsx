@@ -26,7 +26,7 @@ const DefaultLayout = ({ className, children }: DefaultLayoutProps) => {
 
   return (
     <div className={clsx(styles[rootClass], className)}>
-      <Drawer ref={drawerRef}></Drawer>
+      <Drawer ref={drawerRef}>test</Drawer>
       <div className={styles[`${rootClass}__page-container`]}>
         <AppBar onClick={onAppBarIcon}></AppBar>
         <div className="p-md">{children ?? null}</div>
