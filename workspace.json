@@ -15,17 +15,13 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:rollup",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/libs/link",
             "tsConfig": "libs/link/tsconfig.lib.json",
             "project": "libs/link/package.json",
             "entryFile": "libs/link/src/index.ts",
-            "external": [
-              "react/jsx-runtime"
-            ],
+            "external": ["react/jsx-runtime"],
             "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
             "compiler": "babel",
             "assets": [
@@ -39,23 +35,31 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "libs/link/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["libs/link/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/link"
-          ],
+          "outputs": ["coverage/libs/link"],
           "options": {
             "jestConfig": "libs/link/jest.config.ts",
+            "setupFilesAfterEnv": ["../../jest-setup.ts"],
             "passWithNoTests": true
+          }
+        },
+        "version": {
+          "executor": "@jscutlery/semver:version",
+          "options": {
+            "preset": "conventional"
+          }
+        },
+        "publish": {
+          "executor": "nx:run-commands",
+          "options": {
+            "command": "npm publish -access public",
+            "cwd": "dist/libs/link"
           }
         }
       }
@@ -74,10 +78,7 @@
           "executor": "nx:run-commands",
           "outputs": [],
           "options": {
-            "commands": [
-              "echo 'TODO: add publish command for each project'",
-              "npm publish -access public"
-            ]
+            "commands": ["echo 'TODO: add publish command for each project'", "npm publish -access public"]
           },
           "cwd": "dist/libs/dw-button"
         }
