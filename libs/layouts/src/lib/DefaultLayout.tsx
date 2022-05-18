@@ -24,12 +24,38 @@ const DefaultLayout = ({ className, children }: DefaultLayoutProps) => {
     }
   };
 
+  const items = [
+    {
+      title: 'Home',
+      icon: 'home',
+      action: () => alert('testing'),
+      href: '/parent',
+      children: [
+        {
+          title: 'Search',
+          icon: 'search',
+          href: '/search',
+        },
+      ],
+    },
+    {
+      title: 'Dashboard',
+      icon: 'dashboard',
+      href: '/dashboard',
+    },
+    {
+      title: 'Settings',
+      icon: 'settings',
+      href: '/settings',
+    },
+  ];
+
   return (
     <div className={clsx(styles[rootClass], className)}>
-      <Drawer ref={drawerRef}>test</Drawer>
+      <Drawer ref={drawerRef} title={'Franco Berardi'} items={items} />
       <div className={styles[`${rootClass}__page-container`]}>
         <AppBar onClick={onAppBarIcon}></AppBar>
-        <div className="p-md">{children ?? null}</div>
+        <div className="p-md">{children}</div>
       </div>
     </div>
   );

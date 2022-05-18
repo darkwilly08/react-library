@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import * as PropTypes from 'prop-types';
+import clsx from 'clsx';
 import { forwardRef, Ref, useEffect, useImperativeHandle, useState } from 'react';
 
 import { useIsFirstRender, useScreenSize } from '@darkwilly08/common';
@@ -8,12 +8,20 @@ import styles from './drawer.module.scss';
 import { RefDrawer } from './refDrawer';
 import { Menu } from './menu';
 import { Header } from './header';
+import { DrawerProvider } from './contexts';
+
 const propTypes = {
   title: PropTypes.string,
   logo: PropTypes.string,
-  items: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      icon: PropTypes.string,
+      action: PropTypes.func,
+      href: PropTypes.string,
+    }).isRequired,
+  ).isRequired,
   className: PropTypes.string,
-  children: PropTypes.node,
 };
 
 type DrawerProps = PropTypes.InferProps<typeof propTypes>;
@@ -23,7 +31,7 @@ const Drawer = forwardRef(({ className, title, logo, items }: DrawerProps, ref: 
   const screenSize = useScreenSize();
   const isFirstRender = useIsFirstRender();
   const [isHidden, setIsHidden] = useState(true);
-  const [hasOverlay, setHasOverlay] = useState(!screenSize.lg);
+  const [hasOverlay, setHasOverlay] = useState(false);
 
   const toggleVisibility = () => {
     setIsHidden((prevValue) => !prevValue);
@@ -45,19 +53,19 @@ const Drawer = forwardRef(({ className, title, logo, items }: DrawerProps, ref: 
   }));
 
   return (
-    <>
+    <DrawerProvider title={title} logo={logo} menu={items}>
       <div
         className={clsx(styles['drawer__background'], (!hasOverlay || isHidden) && 'hidden')}
         onClick={toggleVisibility}
       />
       <div className={clsx(styles[rootClass], className, isHidden && styles[`${rootClass}--hidden`])}>
         <div className="p-md">
-          <Header logo={logo} title={title} />
-          <hr />
-          <Menu items={items} />
+          <Header />
+          <hr className="mb-md" />
+          <Menu />
         </div>
       </div>
-    </>
+    </DrawerProvider>
   );
 });
 

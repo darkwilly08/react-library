@@ -31,6 +31,7 @@ const useScreenSize = () => {
     }
 
     window.addEventListener('resize', handleResize);
+    setSize(getSize());
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 

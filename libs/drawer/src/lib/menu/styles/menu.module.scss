@@ -1,0 +1,36 @@
+.ripple-menu {
+  width: 100%;
+  padding: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  transition: all 0.3s;
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 16px;
+    text-decoration: none;
+    color: white;
+  }
+
+  &--active {
+    background-color: #121212;
+  }
+}
+
+.ripple-menu:hover {
+  background-color: #12121266;
+}
+
+.item {
+  &__child {
+    color: rgb(178, 186, 194);
+
+    &__separator {
+      border: 0;
+      height: 1px;
+      background: #ffffff80;
+    }
+  }
+}
