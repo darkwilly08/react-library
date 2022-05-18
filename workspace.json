@@ -2,11 +2,64 @@
   "version": 2,
   "projects": {
     "app-bar": "libs/app-bar",
-    "dw-button": "libs/dw-button",
     "common": "libs/common",
     "drawer": "libs/drawer",
+    "dw-button": "libs/dw-button",
     "icon-wrapper": "libs/icon-wrapper",
     "layouts": "libs/layouts",
+    "link": {
+      "root": "libs/link",
+      "sourceRoot": "libs/link/src",
+      "projectType": "library",
+      "tags": [],
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:rollup",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/link",
+            "tsConfig": "libs/link/tsconfig.lib.json",
+            "project": "libs/link/package.json",
+            "entryFile": "libs/link/src/index.ts",
+            "external": [
+              "react/jsx-runtime"
+            ],
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "compiler": "babel",
+            "assets": [
+              {
+                "glob": "libs/link/README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "libs/link/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/link"
+          ],
+          "options": {
+            "jestConfig": "libs/link/jest.config.ts",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "shared-stories": "libs/shared/stories",
     "workspace": {
       "root": ".",
@@ -21,7 +74,10 @@
           "executor": "nx:run-commands",
           "outputs": [],
           "options": {
-            "commands": ["echo 'TODO: add publish command for each project'", "npm publish -access public"]
+            "commands": [
+              "echo 'TODO: add publish command for each project'",
+              "npm publish -access public"
+            ]
           },
           "cwd": "dist/libs/dw-button"
         }
