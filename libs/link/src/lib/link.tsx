@@ -1,26 +1,35 @@
+import NextLink from 'next/link';
+import clsx from 'clsx';
 
-
-
-
-
-  import styles from './link.module.scss';
-  
-
-/* eslint-disable-next-line */
-export interface LinkProps {
+interface DwLinkProps {
+  isExternal: boolean;
+  href?: string | null;
+  className?: string;
+  children: React.ReactNode;
 }
 
+export function Link({ className, href, isExternal, children }: DwLinkProps) {
+  if (!href) {
+    return <div className={clsx(className)}>{children}</div>;
+  }
 
+  if (isExternal) {
+    return (
+      <a className={clsx(className)} href={href}>
+        {children}
+      </a>
+    );
+  }
 
-export function Link(props: LinkProps) {
   return (
-    <div className={styles['container']}>
-      
-      <h1>Welcome to Link!</h1>
-      
-    </div>
+    <NextLink className={clsx(className)} href={href}>
+      <a>{children}</a>
+    </NextLink>
   );
-};
+}
 
+Link.defaultProps = {
+  isExternal: false,
+};
 
 export default Link;

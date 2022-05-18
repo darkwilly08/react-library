@@ -29,7 +29,6 @@ const DefaultLayout = ({ className, children }: DefaultLayoutProps) => {
       title: 'Home',
       icon: 'home',
       action: () => alert('testing'),
-      href: '/parent',
       children: [
         {
           title: 'Search',

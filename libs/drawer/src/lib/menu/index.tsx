@@ -4,6 +4,8 @@ import clsx from 'clsx';
 
 import Ripples from 'react-ripples';
 
+import { Link } from '@darkwilly08/link';
+
 import styles from './styles/menu.module.scss';
 import { DrawerItem } from '../models';
 import { Item } from '../item';
@@ -37,7 +39,7 @@ const Menu = () => {
           {item.children && (
             <>
               {item.children.map((child) => (
-                <a key={child.title} href={child.href!}>
+                <Link key={child.title} href={child.href}>
                   <Ripples
                     className={clsx(
                       styles[rootClass],
@@ -50,7 +52,7 @@ const Menu = () => {
                       <span className={clsx('text-body2', styles['item__child'])}>{child.title}</span>
                     </div>
                   </Ripples>
-                </a>
+                </Link>
               ))}
 
               <hr className={styles['item__child__separator']} />

@@ -5,6 +5,7 @@ import styles from './styles/item.module.scss';
 import Ripples from 'react-ripples';
 import { DrawerItem } from '../models';
 import { IconWrapper } from '@darkwilly08/icon-wrapper';
+import { Link } from '@darkwilly08/link';
 
 interface ItemProps {
   item: DrawerItem;
@@ -13,10 +14,8 @@ interface ItemProps {
 }
 
 const Item = ({ item, action, active }: ItemProps) => {
-  const WrapperTag: keyof JSX.IntrinsicElements = !item.children ? 'a' : 'div';
-
   return (
-    <WrapperTag href={item.href!} className={styles['wrapper']}>
+    <Link href={item.href} className={styles['wrapper']}>
       <Ripples
         className={clsx(styles['wrapper__ripple-item'], active && styles['wrapper__ripple-item--active'])}
         during={1200}
@@ -27,7 +26,7 @@ const Item = ({ item, action, active }: ItemProps) => {
           <span className="text-subtitle">{item.title}</span>
         </div>
       </Ripples>
-    </WrapperTag>
+    </Link>
   );
 };
 
