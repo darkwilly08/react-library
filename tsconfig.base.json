@@ -39,6 +39,9 @@
       "@darkwilly08/link": [
         "libs/link/src/index.ts"
       ],
+      "@darkwilly08/login": [
+        "libs/login/src/index.ts"
+      ],
       "@darkwilly08/shared/stories": [
         "libs/shared/stories/src/index.ts"
       ]

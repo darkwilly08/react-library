@@ -7,6 +7,7 @@ module.exports = {
     '@darkwilly08/drawer': '<rootDir>/libs/drawer/src/index.ts',
     '@darkwilly08/icon-wrapper': '<rootDir>/libs/icon-wrapper/src/index.ts',
     '@darkwilly08/link': '<rootDir>/libs/link/src/index.ts',
+    '@darkwilly08/login': '<rootDir>/libs/login/src/index.ts',
   },
   modulePathIgnorePatterns: ['<rootDir>/dist'],
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
