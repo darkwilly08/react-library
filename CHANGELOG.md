@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.4](https://github.com-darkwilly08/darkwilly08/react-library/compare/v0.2.4-alpha.0...v0.2.4) (2022-05-28)
+
+
+### Bug Fixes
+
+* **drawer:** look and feel menu improved ([5ab4513](https://github.com-darkwilly08/darkwilly08/react-library/commit/5ab451343e61aebe437a3e4c1f1009d269ba2438))
+
+
+
 ## [0.2.4-alpha.0](https://github.com-darkwilly08/darkwilly08/react-library/compare/v0.2.3...v0.2.4-alpha.0) (2022-05-18)
 
 
