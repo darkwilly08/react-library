@@ -39,20 +39,21 @@ const Menu = () => {
           {item.children && (
             <>
               {item.children.map((child) => (
-                <Link key={child.title} href={child.href}>
-                  <Ripples
-                    className={clsx(
-                      styles[rootClass],
-                      activeItem && activeItem.title === child.title && styles[`${rootClass}--active`],
-                    )}
-                    during={1200}
-                    onClick={() => handleActive(child)}
-                  >
-                    <div className={styles[`${rootClass}__menu`]}>
+                <Ripples
+                  key={child.title}
+                  className={clsx(
+                    styles[rootClass],
+                    activeItem && activeItem.title === child.title && styles[`${rootClass}--active`],
+                  )}
+                  during={1200}
+                  onClick={() => handleActive(child)}
+                >
+                  <div className={styles['item']}>
+                    <Link href={child.href}>
                       <span className={clsx('text-body2', styles['item__child'])}>{child.title}</span>
-                    </div>
-                  </Ripples>
-                </Link>
+                    </Link>
+                  </div>
+                </Ripples>
               ))}
 
               <hr className={styles['item__child__separator']} />

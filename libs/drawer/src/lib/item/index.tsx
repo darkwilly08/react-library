@@ -15,18 +15,20 @@ interface ItemProps {
 
 const Item = ({ item, action, active }: ItemProps) => {
   return (
-    <Link href={item.href} className={styles['wrapper']}>
-      <Ripples
-        className={clsx(styles['wrapper__ripple-item'], active && styles['wrapper__ripple-item--active'])}
-        during={1200}
-        onClick={action}
-      >
-        <div className={styles['wrapper__ripple-item__item']}>
-          {item.icon && <IconWrapper name={item.icon} />}
-          <span className="text-subtitle">{item.title}</span>
-        </div>
-      </Ripples>
-    </Link>
+    <Ripples
+      className={clsx(styles['wrapper__ripple-item'], active && styles['wrapper__ripple-item--active'])}
+      during={1200}
+      onClick={action}
+    >
+      <div className={styles['wrapper']}>
+        <Link href={item.href}>
+          <div className={styles['wrapper__ripple-item__item']}>
+            {item.icon && <IconWrapper name={item.icon} />}
+            <span className="text-subtitle">{item.title}</span>
+          </div>
+        </Link>
+      </div>
+    </Ripples>
   );
 };
 
