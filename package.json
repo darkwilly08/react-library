@@ -1,6 +1,6 @@
 {
   "name": "darkwilly08",
-  "version": "0.2.5-alpha.1",
+  "version": "0.2.5-alpha.2",
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
@@ -84,7 +84,6 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "27.5.1",
     "next": "^12.1.6",
-    "nookies": "^2.5.2",
     "nx": "14.3.6",
     "prettier": "2.7.1",
     "react-ripples": "^2.2.1",
