@@ -1,7 +1,5 @@
 import { useState, useReducer, useEffect } from 'react';
 
-import nookies from 'nookies';
-
 import { onIdTokenChanged, onAuthStateChanged, ParsedToken, User, signInWithCustomToken, Auth } from 'firebase/auth';
 
 import { AuthService } from '../services/userService';
@@ -11,6 +9,13 @@ const extractRolesFromClaims = (claims: ParsedToken) => {
   return Object.entries(claims)
     .map(([k]) => k)
     .filter((o) => o.endsWith('ROLE'));
+};
+
+const setCookie = (cname: string, cvalue: string, exMins: number) => {
+  const d = new Date();
+  d.setTime(d.getTime() + exMins * 60 * 1000);
+  const expires = 'expires=' + d.toUTCString();
+  document.cookie = cname + '=' + cvalue + ';' + expires + ';' + ';path=/';
 };
 
 export const tokenCookie = 'authToken';
@@ -99,7 +104,7 @@ export function useCustomAuth(auth: Auth, isSSR: boolean, apiUrl: string) {
 
   const idTokenChanged = async (user: User | null) => {
     if (!user) {
-      if (isSSR) nookies.set(null, tokenCookie, '', { path: '/' });
+      if (isSSR) setCookie(tokenCookie, '', 0);
 
       return;
     }
@@ -110,7 +115,7 @@ export function useCustomAuth(auth: Auth, isSSR: boolean, apiUrl: string) {
       payload: { token },
     });
 
-    if (isSSR) nookies.set(null, tokenCookie, token, { path: '/' });
+    if (isSSR) setCookie(tokenCookie, token, 60);
   };
 
   useEffect(() => {

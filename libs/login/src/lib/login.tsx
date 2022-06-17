@@ -83,7 +83,6 @@ export function Login({ image, logo, title, onLogin, labels }: LoginProps) {
   };
 
   const handlePasswordChange = (value: string) => {
-    console.log('onpasswordchangr', value);
     setPassword({
       value,
       error: passwordValidator(value),
