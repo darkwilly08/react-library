@@ -1,10 +1,20 @@
 import { render } from '@testing-library/react';
 
-import Login from './login';
+import { Login, LoginProps } from './login';
 
 describe('Login', () => {
+  let loginProps: LoginProps;
+  beforeEach(() => {
+    loginProps = {
+      title: 'Example App',
+      onLogin: jest.fn(),
+      image: 'https://dummy.com',
+    };
+  });
   it('should render successfully', () => {
-    const { baseElement } = render(< Login />);
-    expect(baseElement).toBeTruthy();
+    const { container } = render(
+      <Login title={loginProps.title} onLogin={loginProps.onLogin} image={loginProps.image} />,
+    );
+    expect(container).toMatchSnapshot();
   });
 });

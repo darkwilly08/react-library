@@ -1,20 +1,18 @@
 import clsx from 'clsx';
-import * as PropTypes from 'prop-types';
 import { useRef } from 'react';
 
 import { AppBar } from '@darkwilly08/app-bar';
-import { Drawer, RefDrawer } from '@darkwilly08/drawer';
+import { Drawer, RefDrawer, DrawerItem } from '@darkwilly08/drawer';
 
 import styles from './styles/DefaultLayout.module.scss';
 
-const propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
+interface DefaultLayoutProps {
+  className?: string;
+  children: JSX.Element;
+  items: DrawerItem[];
+}
 
-type DefaultLayoutProps = PropTypes.InferProps<typeof propTypes>;
-
-const DefaultLayout = ({ className, children }: DefaultLayoutProps) => {
+const DefaultLayout = ({ className, children, items }: DefaultLayoutProps) => {
   const rootClass = 'default-layout';
   const drawerRef = useRef<RefDrawer>(null);
 
@@ -23,31 +21,6 @@ const DefaultLayout = ({ className, children }: DefaultLayoutProps) => {
       drawerRef.current.toggleVisibility();
     }
   };
-
-  const items = [
-    {
-      title: 'Home',
-      icon: 'home',
-      action: () => alert('testing'),
-      children: [
-        {
-          title: 'Search',
-          icon: 'search',
-          href: '/search',
-        },
-      ],
-    },
-    {
-      title: 'Dashboard',
-      icon: 'dashboard',
-      href: '/dashboard',
-    },
-    {
-      title: 'Settings',
-      icon: 'settings',
-      href: '/settings',
-    },
-  ];
 
   return (
     <div className={clsx(styles[rootClass], className)}>
@@ -59,7 +32,5 @@ const DefaultLayout = ({ className, children }: DefaultLayoutProps) => {
     </div>
   );
 };
-
-DefaultLayout.propTypes = propTypes;
 
 export { DefaultLayout };

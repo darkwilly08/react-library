@@ -105,6 +105,19 @@
             "setupFilesAfterEnv": ["../../jest-setup.ts"],
             "passWithNoTests": true
           }
+        },
+        "version": {
+          "executor": "@jscutlery/semver:version",
+          "options": {
+            "preset": "conventional"
+          }
+        },
+        "publish": {
+          "executor": "nx:run-commands",
+          "options": {
+            "command": "npm publish -access public",
+            "cwd": "dist/libs/login"
+          }
         }
       }
     },

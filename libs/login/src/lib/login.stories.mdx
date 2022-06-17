@@ -1,0 +1,12 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { action } from '@storybook/addon-actions';
+
+import { Login } from './login';
+
+<Meta title="Components/Login" />
+
+<Canvas>
+  <Story name="Default">
+    <Login onLogin={(user, psw) => console.log(user)} />
+  </Story>
+</Canvas>

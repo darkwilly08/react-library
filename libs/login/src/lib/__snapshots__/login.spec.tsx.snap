@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should render successfully 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="login-card"
+    >
+      <div
+        class="login-card__image"
+      >
+        <img
+          alt="company"
+          src="https://dummy.com"
+        />
+        <div
+          class="login-card__image__logo"
+        >
+          <img
+            alt="company"
+            src="https://dummyimage.com/60x60/d6a3d6/000000"
+          />
+        </div>
+      </div>
+      <form
+        class="login-card__form"
+      >
+        <div
+          class="text-h6"
+        >
+          Example App
+        </div>
+        <div
+          class="login-card__form__fields-container"
+        >
+          <div
+            class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled MuiFormLabel-root MuiFormLabel-colorPrimary css-e4w4as-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="false"
+              for="mui-1"
+              id="mui-1-label"
+            >
+              Username
+            </label>
+            <div
+              class="MuiFilledInput-root MuiFilledInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-19mk8g1-MuiInputBase-root-MuiFilledInput-root"
+            >
+              <input
+                aria-invalid="false"
+                autocomplete="username"
+                class="MuiFilledInput-input MuiInputBase-input css-10botns-MuiInputBase-input-MuiFilledInput-input"
+                id="mui-1"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled MuiFormLabel-root MuiFormLabel-colorPrimary css-e4w4as-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="false"
+              for="mui-2"
+              id="mui-2-label"
+            >
+              Password
+            </label>
+            <div
+              class="MuiFilledInput-root MuiFilledInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd css-g9m4e0-MuiInputBase-root-MuiFilledInput-root"
+            >
+              <input
+                aria-invalid="false"
+                autocomplete="current-password"
+                class="MuiFilledInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd css-1gctnaj-MuiInputBase-input-MuiFilledInput-input"
+                id="mui-2"
+                type="password"
+                value=""
+              />
+              <div
+                class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-filled MuiInputAdornment-sizeMedium css-jv61v3-MuiInputAdornment-root"
+              >
+                <div
+                  class="react-ripples ripple-button--round"
+                  style="position: relative; display: inline-flex; overflow: hidden;"
+                >
+                  <button
+                    class="ripple-button__button ripple-button__button--flat ripple-button__button--round"
+                  >
+                    <span
+                      class="material-icons ripple-button__button__left-icon ripple-button__button__left-icon--round"
+                    >
+                      visibility_off
+                    </span>
+                  </button>
+                  <s
+                    style="position: absolute; border-radius: 50%; opacity: 0; width: 35px; height: 35px; transform: translate(-50%, -50%); pointer-events: none;"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="react-ripples ripple-button ripple-button--full-width"
+          style="position: relative; display: inline-flex; overflow: hidden;"
+        >
+          <button
+            class="ripple-button__button ripple-button__button--full-width"
+          >
+            <div>
+              login
+            </div>
+          </button>
+          <s
+            style="position: absolute; border-radius: 50%; opacity: 0; width: 35px; height: 35px; transform: translate(-50%, -50%); pointer-events: none;"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

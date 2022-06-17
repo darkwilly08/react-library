@@ -16,23 +16,32 @@ const propTypes = {
   textColor: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   round: PropTypes.bool,
+  fullWidth: PropTypes.bool,
 };
 
 export type ButtonProps = PropTypes.InferProps<typeof propTypes>;
 
-export const DwButton = ({ text, icon, rightIcon, flat, color, textColor, onClick, round }: ButtonProps) => {
+export const DwButton = ({ text, icon, rightIcon, flat, color, textColor, onClick, round, fullWidth }: ButtonProps) => {
   const rootClass = 'ripple-button';
   const style: CSSProperties = {
     color: textColor ?? undefined,
     backgroundColor: color ?? undefined,
   };
   return (
-    <Ripples className={clsx(!flat && styles[rootClass], round && styles[`${rootClass}--round`])} onClick={onClick}>
+    <Ripples
+      className={clsx(
+        !flat && styles[rootClass],
+        round && styles[`${rootClass}--round`],
+        fullWidth && styles[`${rootClass}--full-width`],
+      )}
+      onClick={onClick}
+    >
       <button
         className={clsx(
           styles[`${rootClass}__button`],
           flat && styles[`${rootClass}__button--flat`],
           round && styles[`${rootClass}__button--round`],
+          fullWidth && styles[`${rootClass}__button--full-width`],
         )}
         style={style}
       >

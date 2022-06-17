@@ -7,6 +7,10 @@
     border-radius: 100%;
   }
 
+  &--full-width {
+    width: 100%;
+  }
+
   &__button {
     display: flex;
     align-items: center;
@@ -27,6 +31,11 @@
 
     &--round {
       padding: common.$p-sm;
+    }
+
+    &--full-width {
+      width: 100%;
+      justify-content: center;
     }
 
     &__left-icon {
