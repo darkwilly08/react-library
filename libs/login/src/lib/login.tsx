@@ -169,6 +169,16 @@ export function Login({ image, logo, title, onLogin, labels }: LoginProps) {
             />
           </div>
           <DwButton fullWidth text={labels?.login} onClick={() => null} />
+          <div style={{ display: 'flex', marginTop: '10px', fontSize: '.8rem' }}>
+            <span>
+              Forgot
+              <a href=""> password?</a>
+            </span>
+            <span style={{ marginLeft: 'auto' }}>
+              New user?
+              <a href=""> Register</a>
+            </span>
+          </div>
         </form>
       </div>
     </div>
