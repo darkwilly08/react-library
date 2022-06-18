@@ -7,6 +7,17 @@ import { Login } from './login';
 
 <Canvas>
   <Story name="Default">
-    <Login onLogin={(user, psw) => console.log(user)} />
+    <Login
+      signIn={{
+        onSignIn: (user) => console.log(user),
+        image: 'https://dummyimage.com/700x350/000/fff',
+      }}
+      signUp={{
+        onSignUp: (user) => console.log(user),
+        image: 'https://dummyimage.com/700x350/000/fff',
+        logo: 'https://dummyimage.com/60x60/d6a3d6/000000',
+      }}
+      title={'Tech Inside'}
+    />
   </Story>
 </Canvas>
