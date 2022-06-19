@@ -37,74 +37,72 @@ export function SignIn({ image, logo, title, onSignIn, labels, onRegister }: Sig
   } = useConfig();
 
   return (
-    <div className={styles['container']}>
-      <div className={styles['login-card']}>
-        <div className={styles['login-card__image']}>
-          <img src={image} alt="company" />
-          {logo && (
-            <div className={styles['login-card__image__logo']}>
-              <img src={logo} alt="company" />
-            </div>
-          )}
-        </div>
-        <form
-          className={styles['login-card__form']}
-          onSubmit={(e) => {
-            e.preventDefault();
-            onSignIn(usernameField.value, passwordField.value);
-          }}
-        >
-          <div className="text-h6">{title}</div>
-          <div className={styles['login-card__form__fields-container']}>
-            <TextField
-              value={usernameField.value}
-              label={labels?.username}
-              onChange={(evt) => handleUsernameChange(evt.target.value)}
-              onBlur={(evt) => handleUsernameBlur(evt.target.value)}
-              onFocus={handleUsernameFocus}
-              variant="filled"
-              autoComplete="username"
-              error={!!usernameField.error}
-              helperText={usernameField.error}
-            />
-            <TextField
-              value={passwordField.value}
-              label={labels?.password}
-              onChange={(evt) => handlePasswordChange(evt.target.value)}
-              type={passwordVisibility ? 'text' : 'password'}
-              autoComplete="current-password"
-              error={!!passwordField.error}
-              helperText={passwordField.error}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <DwButton
-                      onClick={handlePasswordVisibility}
-                      flat
-                      round
-                      icon={passwordVisibility ? 'visibility' : 'visibility_off'}
-                    />
-                  </InputAdornment>
-                ),
-              }}
-              variant="filled"
-            />
+    <div className={styles['login-card']}>
+      <div className={styles['login-card__image']}>
+        <img src={image} alt="company" />
+        {logo && (
+          <div className={styles['login-card__image__logo']}>
+            <img src={logo} alt="company" />
           </div>
-          <DwButton fullWidth text={labels?.signIn} onClick={() => null} />
-          <div style={{ display: 'flex', marginTop: '10px', fontSize: '.8rem' }}>
-            <span>
-              Forgot
-              <a href=""> password?</a>
-            </span>
-            <span style={{ marginLeft: 'auto' }}>
-              New user?
-              <button className={styles['link']} style={{ marginLeft: '4px' }} onClick={onRegister}>
-                Register
-              </button>
-            </span>
-          </div>
-        </form>
+        )}
       </div>
+      <form
+        className={styles['login-card__form']}
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSignIn(usernameField.value, passwordField.value);
+        }}
+      >
+        <div className="text-h6">{title}</div>
+        <div className={styles['login-card__form__fields-container']}>
+          <TextField
+            value={usernameField.value}
+            label={labels?.username}
+            onChange={(evt) => handleUsernameChange(evt.target.value)}
+            onBlur={(evt) => handleUsernameBlur(evt.target.value)}
+            onFocus={handleUsernameFocus}
+            variant="filled"
+            autoComplete="username"
+            error={!!usernameField.error}
+            helperText={usernameField.error}
+          />
+          <TextField
+            value={passwordField.value}
+            label={labels?.password}
+            onChange={(evt) => handlePasswordChange(evt.target.value)}
+            type={passwordVisibility ? 'text' : 'password'}
+            autoComplete="current-password"
+            error={!!passwordField.error}
+            helperText={passwordField.error}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <DwButton
+                    onClick={handlePasswordVisibility}
+                    flat
+                    round
+                    icon={passwordVisibility ? 'visibility' : 'visibility_off'}
+                  />
+                </InputAdornment>
+              ),
+            }}
+            variant="filled"
+          />
+        </div>
+        <DwButton fullWidth text={labels?.signIn} onClick={() => null} />
+        <div style={{ display: 'flex', marginTop: '10px', fontSize: '.8rem' }}>
+          <span>
+            Forgot
+            <a href=""> password?</a>
+          </span>
+          <span style={{ marginLeft: 'auto' }}>
+            New user?
+            <button className={styles['link']} style={{ marginLeft: '4px' }} onClick={onRegister}>
+              Register
+            </button>
+          </span>
+        </div>
+      </form>
     </div>
   );
 }

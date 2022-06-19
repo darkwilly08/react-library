@@ -77,6 +77,13 @@ export const useConfig = () => {
       value,
       error: passwordValidator(value),
     });
+
+    if (confirmPasswordField.value) {
+      setConfirmPassword((prevState) => ({
+        value: prevState.value,
+        error: passwordMatchValidator(prevState.value, value),
+      }));
+    }
   };
 
   const handleUsernameBlur = (value: string) => {

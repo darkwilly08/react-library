@@ -5,6 +5,8 @@ import { useSprings, animated } from 'react-spring';
 import { SignIn } from './sign-in';
 import { SignUp } from './sign-up';
 
+import styles from './login.module.scss';
+
 const propTypes = {
   title: PropTypes.string.isRequired,
   signIn: PropTypes.shape({
@@ -33,26 +35,30 @@ const propTypes = {
 export type LoginProps = PropTypes.InferProps<typeof propTypes>;
 
 export function Login({ title, signIn, signUp }: LoginProps) {
-  const width = window.innerWidth;
+  const hiddenProps = {
+    scale: 0.9,
+    opacity: 0,
+    display: 'none',
+    delay: (key: string) => (['display'].includes(key) ? 300 : 0),
+  };
+
+  const visibleProps = {
+    scale: 1,
+    left: `0%`,
+    opacity: 1,
+    display: 'block',
+    delay: 0,
+  };
+
   const handleOnRegister = () => {
     api.start((i) => {
       if (i === 0)
         return {
-          scale: 0.9,
-          x: `${window.innerWidth}px`,
-          opacity: 0,
-          visibility: 'hidden',
-          delay: (key) => (['visibility'].includes(key) ? 300 : 0),
+          ...hiddenProps,
+          left: '100%',
         };
-      const x = '0px';
-      const scale = 1;
-      return {
-        x,
-        scale,
-        opacity: 1,
-        visibility: 'visible',
-        delay: 0,
-      };
+
+      return visibleProps;
     });
   };
 
@@ -60,21 +66,11 @@ export function Login({ title, signIn, signUp }: LoginProps) {
     api.start((i) => {
       if (i === 1)
         return {
-          scale: 0.9,
-          x: `${-1 * window.innerWidth}px`,
-          opacity: 0,
-          visibility: 'hidden',
-          delay: (key) => (['visibility'].includes(key) ? 300 : 0),
+          ...hiddenProps,
+          left: '-100%',
         };
-      const x = '0px';
-      const scale = 1;
-      return {
-        x,
-        scale,
-        opacity: 1,
-        visibility: 'visible',
-        delay: 0,
-      };
+
+      return visibleProps;
     });
   };
 
@@ -90,21 +86,22 @@ export function Login({ title, signIn, signUp }: LoginProps) {
   ];
 
   const [props, api] = useSprings(pages.length, (i) => ({
-    x: i === 0 ? '0px' : `${-width}px`,
-    scale: 1,
-    opacity: i === 0 ? 1 : 0,
-    visibility: i === 0 ? 'visible' : 'hidden',
+    left: i === 0 ? '0%' : `-100%`,
+    scale: i === 0 ? visibleProps.scale : hiddenProps.scale,
+    opacity: i === 0 ? visibleProps.opacity : hiddenProps.opacity,
+    display: i === 0 ? visibleProps.display : hiddenProps.display,
     config: { duration: 300 },
   }));
 
+  // TODO: validate errors before callbacks
   return (
-    <main>
-      {props.map(({ x, scale, opacity, visibility }, i) => (
-        <animated.div key={i} style={{ translateX: x, scale, opacity, visibility: visibility as any }}>
+    <div className={styles['wrapper']}>
+      {props.map(({ left, scale, opacity, display }, i) => (
+        <animated.div className={styles['container']} key={i} style={{ display, x: left, scale, opacity }}>
           {pages[i]}
         </animated.div>
       ))}
-    </main>
+    </div>
   );
 }
 
