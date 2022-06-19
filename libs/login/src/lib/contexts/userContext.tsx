@@ -3,7 +3,8 @@ import { useCustomAuth } from '../hooks/useAuth';
 import { AuthContextModel, AuthUser } from '../models/authUser';
 
 interface AuthModel {
-  login: (username: string, password: string) => Promise<unknown>;
+  signIn: (username: string, password: string) => Promise<unknown>;
+  signUp: (username: string, password: string) => Promise<unknown>;
   logout: () => Promise<void>;
   authUser: AuthUser;
   ready: boolean;

@@ -64,10 +64,24 @@ export function useCustomAuth(auth: Auth, isSSR: boolean, apiUrl: string) {
   const [authUser, dispatch] = useReducer(authReducer, initialState);
   const [ready, setReady] = useState(false);
 
-  const login = async (username: string, password: string) => {
+  const signIn = async (username: string, password: string) => {
     return new Promise<void>((resolve, reject) => {
       new AuthService(apiUrl)
         .signIn(username, password)
+        .then((res) => {
+          const customToken = res.data.customToken;
+          signInWithCustomToken(auth, customToken)
+            .then(() => resolve())
+            .catch(reject);
+        })
+        .catch(reject);
+    });
+  };
+
+  const signUp = async (username: string, password: string) => {
+    return new Promise<void>((resolve, reject) => {
+      new AuthService(apiUrl)
+        .signUp(username, password)
         .then((res) => {
           const customToken = res.data.customToken;
           signInWithCustomToken(auth, customToken)
@@ -129,7 +143,8 @@ export function useCustomAuth(auth: Auth, isSSR: boolean, apiUrl: string) {
 
   return {
     authUser,
-    login,
+    signIn,
+    signUp,
     logout,
     ready,
   };
