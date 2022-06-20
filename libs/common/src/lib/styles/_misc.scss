@@ -2,4 +2,8 @@
   .hidden {
     display: none;
   }
+
+  ::-ms-reveal {
+    display: none;
+  }
 }

@@ -97,7 +97,14 @@ export function SignIn({ image, logo, title, onSignIn, labels, onRegister }: Sig
           </span>
           <span style={{ marginLeft: 'auto' }}>
             New user?
-            <button className={styles['link']} style={{ marginLeft: '4px' }} onClick={onRegister}>
+            <button
+              className={styles['link']}
+              style={{ marginLeft: '4px' }}
+              onClick={(e) => {
+                e.preventDefault();
+                onRegister();
+              }}
+            >
               Register
             </button>
           </span>

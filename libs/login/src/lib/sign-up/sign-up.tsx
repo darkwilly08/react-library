@@ -118,8 +118,14 @@ export function SignUp({ image, logo, title, onSignUp, labels, onLogin }: SignUp
         <div style={{ display: 'flex', marginTop: '10px', fontSize: '.8rem' }}>
           <span style={{ marginLeft: 'auto' }}>
             Have account?
-            <button className={styles['link']} style={{ marginLeft: '4px' }} onClick={onLogin}>
-              {' '}
+            <button
+              className={styles['link']}
+              style={{ marginLeft: '4px' }}
+              onClick={(e) => {
+                e.preventDefault();
+                onLogin();
+              }}
+            >
               SignIn
             </button>
           </span>
