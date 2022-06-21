@@ -81,6 +81,7 @@ export function SignUp({ image, logo, title, onSignUp, labels, onLogin }: SignUp
               endAdornment: (
                 <InputAdornment position="end">
                   <DwButton
+                    type="button"
                     onClick={handlePasswordVisibility}
                     flat
                     round
@@ -103,6 +104,7 @@ export function SignUp({ image, logo, title, onSignUp, labels, onLogin }: SignUp
               endAdornment: (
                 <InputAdornment position="end">
                   <DwButton
+                    type="button"
                     onClick={handlePasswordVisibility}
                     flat
                     round
@@ -114,11 +116,12 @@ export function SignUp({ image, logo, title, onSignUp, labels, onLogin }: SignUp
             variant="filled"
           />
         </div>
-        <DwButton fullWidth text={labels?.signUp} onClick={() => null} />
+        <DwButton type="submit" fullWidth text={labels?.signUp} onClick={() => null} />
         <div style={{ display: 'flex', marginTop: '10px', fontSize: '.8rem' }}>
           <span style={{ marginLeft: 'auto' }}>
             Have account?
             <button
+              type="button"
               className={styles['link']}
               style={{ marginLeft: '4px' }}
               onClick={(e) => {

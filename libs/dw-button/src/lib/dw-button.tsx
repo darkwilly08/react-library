@@ -10,6 +10,7 @@ import { CSSProperties } from 'react';
 const propTypes = {
   text: PropTypes.string,
   icon: PropTypes.string,
+  type: PropTypes.oneOf(['submit', 'reset', 'button']),
   rightIcon: PropTypes.string,
   flat: PropTypes.bool,
   color: PropTypes.string,
@@ -21,12 +22,25 @@ const propTypes = {
 
 export type ButtonProps = PropTypes.InferProps<typeof propTypes>;
 
-export const DwButton = ({ text, icon, rightIcon, flat, color, textColor, onClick, round, fullWidth }: ButtonProps) => {
+export const DwButton = ({
+  type,
+  text,
+  icon,
+  rightIcon,
+  flat,
+  color,
+  textColor,
+  onClick,
+  round,
+  fullWidth,
+}: ButtonProps) => {
   const rootClass = 'ripple-button';
   const style: CSSProperties = {
     color: textColor ?? undefined,
     backgroundColor: color ?? undefined,
   };
+  const typeValue = type ? (type as 'submit' | 'reset' | 'button') : undefined;
+
   return (
     <Ripples
       className={clsx(
@@ -37,6 +51,7 @@ export const DwButton = ({ text, icon, rightIcon, flat, color, textColor, onClic
       onClick={onClick}
     >
       <button
+        type={typeValue}
         className={clsx(
           styles[`${rootClass}__button`],
           flat && styles[`${rootClass}__button--flat`],
@@ -67,4 +82,5 @@ DwButton.defaultProps = {
   text: '',
   flat: false,
   round: false,
+  type: 'button',
 };

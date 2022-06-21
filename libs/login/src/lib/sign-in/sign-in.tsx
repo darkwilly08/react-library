@@ -78,7 +78,11 @@ export function SignIn({ image, logo, title, onSignIn, labels, onRegister }: Sig
               endAdornment: (
                 <InputAdornment position="end">
                   <DwButton
-                    onClick={handlePasswordVisibility}
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handlePasswordVisibility(e);
+                    }}
                     flat
                     round
                     icon={passwordVisibility ? 'visibility' : 'visibility_off'}
@@ -89,7 +93,7 @@ export function SignIn({ image, logo, title, onSignIn, labels, onRegister }: Sig
             variant="filled"
           />
         </div>
-        <DwButton fullWidth text={labels?.signIn} onClick={() => null} />
+        <DwButton type="submit" fullWidth text={labels?.signIn} onClick={(e) => e.preventDefault} />
         <div style={{ display: 'flex', marginTop: '10px', fontSize: '.8rem' }}>
           <span>
             Forgot
@@ -98,6 +102,7 @@ export function SignIn({ image, logo, title, onSignIn, labels, onRegister }: Sig
           <span style={{ marginLeft: 'auto' }}>
             New user?
             <button
+              type="button"
               className={styles['link']}
               style={{ marginLeft: '4px' }}
               onClick={(e) => {
