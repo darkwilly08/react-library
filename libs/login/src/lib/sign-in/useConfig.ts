@@ -89,6 +89,30 @@ export const useConfig = () => {
     });
   };
 
+  const validateAll = (): boolean => {
+    let isValid = true;
+    const usernameError = usernameValidator(usernameField.value);
+    if (usernameError) {
+      isValid = false;
+      setUsername((prevState) => ({
+        ...prevState,
+        error: usernameError,
+      }));
+    }
+
+    const passwordError = passwordValidator(passwordField.value);
+
+    if (passwordError) {
+      isValid = false;
+      setPassword((prevState) => ({
+        ...prevState,
+        error: passwordValidator(passwordField.value),
+      }));
+    }
+
+    return isValid;
+  };
+
   return {
     passwordVisibility,
     handlePasswordVisibility,
@@ -98,5 +122,6 @@ export const useConfig = () => {
     handleUsernameFocus,
     usernameField,
     passwordField,
+    validateAll,
   };
 };

@@ -34,6 +34,7 @@ export function SignIn({ image, logo, title, onSignIn, labels, onRegister }: Sig
     handlePasswordChange,
     handlePasswordVisibility,
     passwordVisibility,
+    validateAll,
   } = useConfig();
 
   return (
@@ -50,6 +51,11 @@ export function SignIn({ image, logo, title, onSignIn, labels, onRegister }: Sig
         className={styles['login-card__form']}
         onSubmit={(e) => {
           e.preventDefault();
+
+          if (!validateAll()) {
+            return;
+          }
+
           onSignIn(usernameField.value, passwordField.value);
         }}
       >

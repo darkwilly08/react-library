@@ -120,6 +120,40 @@ export const useConfig = () => {
     });
   };
 
+  const validateAll = (): boolean => {
+    let isValid = true;
+    const usernameError = usernameValidator(usernameField.value);
+    if (usernameError) {
+      isValid = false;
+      setUsername((prevState) => ({
+        ...prevState,
+        error: usernameError,
+      }));
+    }
+
+    const passwordError = passwordValidator(passwordField.value);
+
+    if (passwordError) {
+      isValid = false;
+      setPassword((prevState) => ({
+        ...prevState,
+        error: passwordError,
+      }));
+    }
+
+    const confirmPasswordError = passwordMatchValidator(confirmPasswordField.value, passwordField.value);
+
+    if (confirmPasswordError) {
+      isValid = false;
+      setConfirmPassword((prevState) => ({
+        ...prevState,
+        error: confirmPasswordError,
+      }));
+    }
+
+    return isValid;
+  };
+
   return {
     passwordVisibility,
     handlePasswordVisibility,
@@ -131,5 +165,6 @@ export const useConfig = () => {
     usernameField,
     passwordField,
     confirmPasswordField,
+    validateAll,
   };
 };

@@ -93,7 +93,6 @@ export function Login({ title, signIn, signUp }: LoginProps) {
     config: { duration: 300 },
   }));
 
-  // TODO: validate errors before callbacks
   return (
     <div className={styles['wrapper']}>
       {props.map(({ left, scale, opacity, display }, i) => (

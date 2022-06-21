@@ -37,6 +37,7 @@ export function SignUp({ image, logo, title, onSignUp, labels, onLogin }: SignUp
     handlePasswordVisibility,
     handleConfirmPasswordChange,
     passwordVisibility,
+    validateAll,
   } = useConfig();
 
   return (
@@ -53,6 +54,11 @@ export function SignUp({ image, logo, title, onSignUp, labels, onLogin }: SignUp
         className={styles['login-card__form']}
         onSubmit={(e) => {
           e.preventDefault();
+
+          if (!validateAll()) {
+            return;
+          }
+
           onSignUp(usernameField.value, passwordField.value);
         }}
       >
