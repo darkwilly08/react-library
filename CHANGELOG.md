@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.5-alpha.7](https://github.com-darkwilly08/darkwilly08/react-library/compare/v0.2.5-alpha.6...v0.2.5-alpha.7) (2022-11-07)
+
+
+### Bug Fixes
+
+* **button:** type property added ([0535cf3](https://github.com-darkwilly08/darkwilly08/react-library/commit/0535cf3bd1c687ddb7eec7b88f4f2c513268d312))
+* **login:** validation on click added ([3b82d04](https://github.com-darkwilly08/darkwilly08/react-library/commit/3b82d04fb3ecd04da2b4a4de16526f8c7120b446))
+* width layout ([253ceb7](https://github.com-darkwilly08/darkwilly08/react-library/commit/253ceb7b2f51fca2fc5361b35207d68354677a70))
+
+
+
 ## [0.2.5-alpha.6](https://github.com-darkwilly08/darkwilly08/react-library/compare/v0.2.5-alpha.5...v0.2.5-alpha.6) (2022-06-20)
 
 
