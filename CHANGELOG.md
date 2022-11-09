@@ -2,6 +2,10 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.5-alpha.8](https://github.com-darkwilly08/darkwilly08/react-library/compare/v0.2.5-alpha.7...v0.2.5-alpha.8) (2022-11-09)
+
+
+
 ## [0.2.5-alpha.7](https://github.com-darkwilly08/darkwilly08/react-library/compare/v0.2.5-alpha.6...v0.2.5-alpha.7) (2022-11-07)
 
 
