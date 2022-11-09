@@ -27,7 +27,7 @@ const DefaultLayout = ({ className, children, items }: DefaultLayoutProps) => {
       <Drawer ref={drawerRef} title={'Franco Berardi'} items={items} />
       <div className={styles[`${rootClass}__page-container`]}>
         <AppBar onClick={onAppBarIcon}></AppBar>
-        <div style={{ width: '100%' }} className="p-md">
+        <div className={styles[`${rootClass}__page-container__content`]} >
           {children}
         </div>
       </div>
