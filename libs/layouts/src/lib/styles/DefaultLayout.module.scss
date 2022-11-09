@@ -10,7 +10,7 @@
     align-items: start;
 
     &__content {
-      width: calc(100vw - common.$p-md);
+      width: 100vw;
       padding: common.$p-md;
     }
   }
