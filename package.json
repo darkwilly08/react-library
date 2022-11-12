@@ -1,6 +1,6 @@
 {
   "name": "darkwilly08",
-  "version": "0.2.5-alpha.9",
+  "version": "0.2.5-alpha.10",
   "license": "MIT",
   "scripts": {
     "start": "nx serve",

@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.5-alpha.10](https://github.com-darkwilly08/darkwilly08/react-library/compare/v0.2.5-alpha.9...v0.2.5-alpha.10) (2022-11-12)
+
+
+### Bug Fixes
+
+* appbar properties ([e383421](https://github.com-darkwilly08/darkwilly08/react-library/commit/e383421143ce3651e49cd5b3fa08d7d7f5e415b9))
+* layout width ([9d18b76](https://github.com-darkwilly08/darkwilly08/react-library/commit/9d18b76f54f0feb3225aac1cef8387c865c13106))
+
+
+
 ## [0.2.5-alpha.9](https://github.com-darkwilly08/darkwilly08/react-library/compare/v0.2.5-alpha.8...v0.2.5-alpha.9) (2022-11-09)
 
 
