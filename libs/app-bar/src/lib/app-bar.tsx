@@ -6,17 +6,19 @@ import styles from './app-bar.module.scss';
 
 const propTypes = {
   onClick: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  trailing: PropTypes.node,
 };
 
-type AppBarProps = PropTypes.InferProps<typeof propTypes>;
+export type AppBarProps = PropTypes.InferProps<typeof propTypes>;
 
-const AppBar = ({ onClick }: AppBarProps) => {
+const AppBar = ({ onClick, title, trailing }: AppBarProps) => {
   const rootClass = 'app-bar';
   return (
     <div className={styles[rootClass]}>
-      <DwButton icon="menu" round flat onClick={onClick} />
-      <div className={`${styles['app-bar__title']} text-h6`}>title</div>
-      <div className={`${styles[`${rootClass}__right`]} text-subtitle`}>test</div>
+      <DwButton icon="menu" textColor='#fff' round flat onClick={onClick} />
+      <div className={`${styles['app-bar__title']} text-h6`}>{title}</div>
+      {trailing &&<div className={`${styles[`${rootClass}__right`]} text-subtitle`}>{trailing}</div>} 
     </div>
   );
 };

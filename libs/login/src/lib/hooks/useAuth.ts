@@ -35,6 +35,7 @@ const initialState: AuthUser = {
   loggedIn: false,
   currentUser: null,
   roles: [],
+  claims: null,
   token: null,
 };
 
@@ -53,6 +54,7 @@ const authReducer = (state: AuthUser, action: AuthAction): AuthUser => {
         loggedIn: payload!.loggedIn!,
         token: payload!.token!,
         roles: payload!.roles!,
+        claims: payload!.claims!,
         currentUser: payload!.currentUser!,
       };
     default:
@@ -99,13 +101,14 @@ export function useCustomAuth(auth: Auth, isSSR: boolean, apiUrl: string) {
   const authStateChanged = async (user: User | null) => {
     if (user) {
       const tokenObject = await user.getIdTokenResult();
+      const claims = tokenObject.claims;
       const roles = extractRolesFromClaims(tokenObject.claims);
       const token = tokenObject.token;
       const loggedIn = true;
       const userProfile = await (await new AuthService(apiUrl).fetchProfile(token)).data;
       dispatch({
         type: AuthActionEnum.SET_USER,
-        payload: { token, loggedIn, roles, currentUser: userProfile },
+        payload: { token, loggedIn, claims, roles, currentUser: userProfile },
       });
     } else {
       dispatch({
