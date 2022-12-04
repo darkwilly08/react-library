@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.5-alpha.11](https://github.com-darkwilly08/darkwilly08/react-library/compare/v0.2.5-alpha.10...v0.2.5-alpha.11) (2022-12-04)
+
+
+### Bug Fixes
+
+* layout dynamic width ([6e0154f](https://github.com-darkwilly08/darkwilly08/react-library/commit/6e0154f539e05e3a9348dd837a49d54f8d9b1900))
+
+
+
 ## [0.2.5-alpha.10](https://github.com-darkwilly08/darkwilly08/react-library/compare/v0.2.5-alpha.9...v0.2.5-alpha.10) (2022-11-12)
 
 
