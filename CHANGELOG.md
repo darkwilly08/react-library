@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.5-alpha.12](https://github.com-darkwilly08/darkwilly08/react-library/compare/v0.2.5-alpha.11...v0.2.5-alpha.12) (2022-12-04)
+
+
+### Bug Fixes
+
+* fonts over https ([19f8640](https://github.com-darkwilly08/darkwilly08/react-library/commit/19f8640dd4828565be768fe17e9aeeb9b1bbfa37))
+
+
+
 ## [0.2.5-alpha.11](https://github.com-darkwilly08/darkwilly08/react-library/compare/v0.2.5-alpha.10...v0.2.5-alpha.11) (2022-12-04)
 
 
